@@ -1,0 +1,33 @@
+from django.shortcuts import render
+
+
+def index(request):
+    return render(request, template_name='index.html')
+
+
+def shop(request):
+    return render(request, template_name='shop.html')
+
+
+def detail(request):
+    return render(request, template_name='detail.html')
+
+
+def cart(request):
+    return render(request, template_name='cart.html')
+
+
+def checkout(request):
+    return render(request, template_name='checkout.html')
+
+
+def contact(request):
+    return render(request, template_name='contact.html')
+
+
+def login(request):
+    return render(request, template_name='login.html')
+
+
+def register(request):
+    return render(request, template_name='register.html')
