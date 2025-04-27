@@ -1,0 +1,71 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 30px 0;
+}
+
+.input-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    width: 400px;
+}
+
+.input-box div {
+    margin-bottom: 15px;
+}
+
+.input-box input[type="text"],
+.input-box input[type="email"],
+.input-box input[type="password"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.input-box input[type="text"]:focus,
+.input-box input[type="email"]:focus,
+.input-box input[type="password"]:focus {
+    border-color: #888;
+}
+
+.input-box input[type="submit"] {
+    width: 100%;
+    padding: 10px 0;
+    background: #D19C97;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.input-box input[type="submit"]:hover {
+    background-color: #D19C97;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-link h3 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.login-link a {
+    color: #D19C97;
+    text-decoration: none;
+}
+.login-link a:hover {
+    text-decoration: underline;
+}

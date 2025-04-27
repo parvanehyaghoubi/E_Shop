@@ -25,9 +25,3 @@ def contact(request):
     return render(request, template_name='contact.html')
 
 
-def login(request):
-    return render(request, template_name='login.html')
-
-
-def register(request):
-    return render(request, template_name='register.html')
