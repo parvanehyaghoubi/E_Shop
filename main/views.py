@@ -9,10 +9,6 @@ def shop(request):
     return render(request, template_name='shop.html')
 
 
-def detail(request):
-    return render(request, template_name='detail.html')
-
-
 def cart(request):
     return render(request, template_name='cart.html')
 

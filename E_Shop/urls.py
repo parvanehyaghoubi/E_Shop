@@ -21,4 +21,5 @@ urlpatterns = [
     path('pari_log/', admin.site.urls),
     path('', include('main.urls')),
     path('profile/', include('users.urls')),
+    path('products/', include('details.urls')),
 ]
