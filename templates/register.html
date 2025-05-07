@@ -4,25 +4,26 @@
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
     <div class="login-container">
         <h2 style="text-align: center; position: absolute; padding-bottom: 450px">Register</h2>
-        <form action="#">
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
             <div class="input-box">
                 <div>
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" name="username" placeholder="Username" required>
                 </div>
                 <div>
-                    <input type="email" placeholder="Email Address" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </div>
                 <div>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                 </div>
                 <div>
-                    <input type="password" placeholder="Confirm Password" required>
+                    <input type="password" name="password2" placeholder="Confirm Password" required>
                 </div>
                 <div>
                     <input type="submit" value="Register" class="btn">
                 </div>
                 <div class="login-link">
-                    <h3 style="font-size: medium">Already have an account? <a href="{% url 'login' %}">Login now</a>
+                    <h3 style="font-size: medium">Already have an account? <a href="{% url 'signin' %}">Login now</a>
                     </h3>
                 </div>
             </div>
