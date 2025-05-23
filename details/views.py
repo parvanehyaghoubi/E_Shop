@@ -9,6 +9,6 @@ def listings(request):
     }
     return render(request, template_name='detail.html', context=context)
 
-
-def detail(request):
-    return render(request, template_name='detail.html')
+#
+# def detail(request):
+#     return render(request, template_name='detail.html')

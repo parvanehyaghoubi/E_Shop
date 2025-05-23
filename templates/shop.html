@@ -177,9 +177,9 @@
                                 <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                     <h6 class="text-truncate mb-3">{{ shop_list.title }}</h6>
                                     <div class="d-flex justify-content-center">
-                                        <h6>$123.00</h6>
+                                        <h6>$ {{ shop_list.price }}</h6>
                                         <h6 class="text-muted ml-2">
-                                            <del>${{ shop_list.price }}</del>
+                                            <del>$123.00</del>
                                         </h6>
                                     </div>
                                 </div>
@@ -195,23 +195,48 @@
 
                     <div class="col-12 pb-1">
                         <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center mb-3">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
+                            {% if shop_lists.has_other_pages %}
+                                <ul class="pagination justify-content-center mb-3">
+                                    {% if shop_lists.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ shop_lists.previous_page_number }}" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item disabled">
+                                            <a class="page-link" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% for i in shop_lists.paginator.page_range %}
+                                        {% if shop_lists.number == i %}
+                                            <li class="page-item active"><a class="page-link">{{ i }}</a></li>
+                                        {% else %}
+                                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                                        {% endif%}
+                                    {% endfor %}
+                                    {% if shop_lists.has_next %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ shop_lists.next_page_number }}" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="page-item disabled">
+                                            <a class="page-link" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            {% endif %}
                         </nav>
                     </div>
                 </div>
